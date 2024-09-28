@@ -32,10 +32,10 @@ export function Nav() {
             <span className="font-semibold text-xl">About</span>
           </Navbar.Link>
           <Navbar.Link href="#">
-            <span className="font-semibold text-xl">Services</span>
+            <span className="font-semibold text-xl">Projects</span>
           </Navbar.Link>
           <Navbar.Link href="#">
-            <span className="font-semibold text-xl">Pricing</span>
+            <span className="font-semibold text-xl">Resume</span>
           </Navbar.Link>
           <Navbar.Link href="#">
             <span className="font-semibold text-xl">Contact</span>
