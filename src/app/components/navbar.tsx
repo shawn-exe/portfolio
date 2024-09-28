@@ -25,7 +25,7 @@ export function Nav() {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
-          <Navbar.Link href="#" active>
+          <Navbar.Link href="/" >
             <span className="font-semibold text-xl">Home</span>
           </Navbar.Link>
           <Navbar.Link as={Link} href="#">
@@ -37,7 +37,7 @@ export function Nav() {
           <Navbar.Link href="#">
             <span className="font-semibold text-xl">Resume</span>
           </Navbar.Link>
-          <Navbar.Link href="#">
+          <Navbar.Link href="/contact">
             <span className="font-semibold text-xl">Contact</span>
           </Navbar.Link>
         </Navbar.Collapse>

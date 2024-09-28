@@ -42,21 +42,27 @@ export function Homecomponent(){
           I&apos;m an undergraduate Computer Science and Engineering student with a passion for development. I look forward to contributing to impactful projects and building innovative solutions!!
           </p></div>
           
-          <div>
-            <Link
-              href="/#contact"
-              className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
+          <div className="flex flex-row">
+            <div className="mr-2">
+          <Link
+              href="/"
+              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 bg-slate-800 text-white mt-3"
             >
-              Hire Me
+              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+                Hire Me
+              </span>
             </Link>
+            </div> 
+            <div className="ml-2"> 
             <Link
               href="/"
-              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
+              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 bg-slate-800 text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
                 Download CV
               </span>
             </Link>
+            </div>
           </div>
         </motion.div>
         <motion.div
