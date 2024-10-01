@@ -6,6 +6,8 @@
 .pnp.js
 .yarn/install-state.gz
 
+/src/app/components/footer.tsx
+
 # testing
 /coverage
 
