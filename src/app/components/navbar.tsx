@@ -26,7 +26,7 @@ export function Nav() {
   };
 
   return (
-    <div className="p-5 rounded-2xl">
+    <div className="px-5 pt-5 rounded-2xl">
       <Navbar fluid rounded className="bg-black rounded-lg" theme={customTheme}>
         <Navbar.Brand as={Link} href="https://flowbite-react.com">
           <span className="self-center whitespace-nowrap text-3xl font-semibold text-blue-500 dark:text-black">PortFolio</span>

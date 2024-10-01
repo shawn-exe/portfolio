@@ -1,10 +1,10 @@
 import { Nav } from "../../app/components/navbar";
-
+import Footer from "../components/footer";
 export default function Contact() {
   return (
     <main className="flex min-h-screen flex-col bg-[#121212]">
       <Nav />
-      <div className="py-6 flex flex-col justify-center sm:py-12">
+      <div className="py-2 pb-5 flex flex-col justify-center sm:py-12">
         <div className="relative py-3 sm:max-w-xl sm:mx-auto">
           <div className="absolute inset-0  bg-slate-800 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl max-w-3xl"></div>
           <div className="text-white relative px-4 py-8 bg-gradient-to-r from-blue-400/30 to-blue-300/30 backdrop-blur-md shadow-lg sm:rounded-3xl sm:p-16 max-w-3xl mx-auto h-4/5 ">   
@@ -56,6 +56,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      <Footer/>
     </main>
   );
 }

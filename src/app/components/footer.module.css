@@ -1,0 +1,25 @@
+.footer-text {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .footer-text::before,
+  .footer-text::after {
+    content: "";
+    flex-grow: 1;
+    background-image: linear-gradient(to right, #ffffff 33%, rgba(255, 255, 255, 0) 0%);
+    background-position: bottom;
+    background-size: 15px 1px;
+    background-repeat: repeat-x;
+    height: 1px;
+  }
+  
+  .footer-text::before {
+    margin-right: 10px;
+  }
+  
+  .footer-text::after {
+    margin-left: 10px;
+  }
+  
