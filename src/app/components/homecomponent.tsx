@@ -10,7 +10,7 @@ import { BorderBeam } from '../../components/ui/border-beam';
 
 export function Homecomponent(){
   return (
-    <section className="px-7 lg:py-16">
+    <section className="px-7 py-8 md:py-16 sm:py-16 lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -39,7 +39,7 @@ export function Homecomponent(){
               repeat={Infinity}
             />
           </h1>
-          <div className="pl-1 pr-8"><p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+          <div className="pl-1 pr-10"><p className="text-[#ADB7BE] text-center sm:text-justify md:text-justify text-base sm:text-lg mb-6 lg:text-xl">
           I&apos;m an undergraduate Computer Science and Engineering student with a passion for development. I look forward to contributing to impactful projects and building innovative solutions!!
           </p></div>
           
