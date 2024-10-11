@@ -3,6 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import {Meteors} from '@/components/ui/meteors'
+import {DiscordIcon, GoogleIcon, InstagramIcon, LeetCodeIcon, StackOverflowIcon,XIcon, LinkedInIcon,GithubIcon } from './Icons';
 
 const Intro = () => {
   return (
@@ -51,6 +52,26 @@ const Intro = () => {
           </ul>
         </div>
       </div>
+
+      <div className='flex flex-col justify-center items-center my-5'>
+      <p className='text-md sm:text-md md:text-md font-bold text-white'>get in touch</p>
+        <div className='flex items-center flex-row gap-8 mt-4 flex-wrap'>   
+          <XIcon/>
+          <GithubIcon/>
+          <LinkedInIcon/> 
+          <DiscordIcon/>
+          <GoogleIcon />
+          <InstagramIcon />
+          <LeetCodeIcon />
+          <StackOverflowIcon />
+        </div>
+      </div>
+
+
+      <div className='flex justify-center text-center text-gray-300 mt-10'>
+        Feel free to steal this theme! It&apos;s open source 🥰
+      </div>
+
     </div>
   )
 }

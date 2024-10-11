@@ -12,10 +12,10 @@ export function Homecomponent(){
   return (
     <section className="px-7 py-8 md:py-16 sm:py-16 lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
+        <div
+          // initial={{ opacity: 0, scale: 0.5 }}
+          // animate={{ opacity: 1, scale: 1 }}
+          // transition={{ duration: 0.5 }}
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
@@ -66,11 +66,11 @@ export function Homecomponent(){
             </div>
           </div>
 
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
+        </div>
+        <div
+          // initial={{ opacity: 0, scale: 0.5 }}
+          // animate={{ opacity: 1, scale: 1 }}
+          // transition={{ duration: 0.1 }}
           className="col-span-4 place-self-center mt-4 lg:mt-0"
         >
            <Tilt tiltReverse={true}>
@@ -85,7 +85,7 @@ export function Homecomponent(){
             <BorderBeam size={300} borderWidth={3.5}/>
           </div>
           </Tilt>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
