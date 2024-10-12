@@ -3,7 +3,8 @@
 import React from 'react'
 import Image from 'next/image'
 import {Meteors} from '@/components/ui/meteors'
-import {DiscordIcon, GoogleIcon, InstagramIcon, LeetCodeIcon, StackOverflowIcon,XIcon, LinkedInIcon,GithubIcon } from './Icons';
+import {DiscordIcon, MailIcon, InstagramIcon, LeetCodeIcon, StackOverflowIcon,XIcon, LinkedInIcon,GithubIcon } from './Icons';
+import Link from 'next/link';
 
 const Intro = () => {
   return (
@@ -56,14 +57,57 @@ const Intro = () => {
       <div className='flex flex-col justify-center items-center my-5'>
       <p className='text-md sm:text-md md:text-md font-bold text-white'>get in touch</p>
         <div className='flex items-center flex-row gap-8 mt-4 flex-wrap'>   
-          <XIcon/>
-          <GithubIcon/>
-          <LinkedInIcon/> 
-          <DiscordIcon/>
-          <GoogleIcon />
-          <InstagramIcon />
-          <LeetCodeIcon />
-          <StackOverflowIcon />
+
+          <Link href="https://x.com/?lang=en-in" target="_blank" rel="noopener noreferrer" className="block">
+            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
+              <XIcon />
+            </div>
+          </Link>
+
+
+          <Link href="https://github.com/shawn-exe" target="_blank" rel="noopener noreferrer" className="block">
+            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
+              <GithubIcon />
+            </div>
+          </Link>
+
+
+          <Link href="https://www.linkedin.com/in/shawnxsalis/" target="_blank" rel="noopener noreferrer" className="block">
+            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
+              <LinkedInIcon />
+            </div>
+          </Link>
+
+          <Link href="https://x.com/?lang=en-in" target="_blank" rel="noopener noreferrer" className="block">
+            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
+              <DiscordIcon />
+            </div>
+          </Link>
+
+          <Link  href="mailto:shawnxsalis@gmail.com"  target="_blank" rel="noopener noreferrer" className="block">
+            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
+              <MailIcon />
+            </div>
+          </Link>
+
+          <Link href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="block">
+            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
+              <InstagramIcon />
+            </div>
+          </Link>
+
+          <Link href="https://leetcode.com/u/shawnxsalis/" target="_blank" rel="noopener noreferrer" className="block">
+            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
+              <LeetCodeIcon />
+            </div>
+          </Link>
+
+          <Link href="https://x.com/?lang=en-in" target="_blank" rel="noopener noreferrer" className="block">
+            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
+              <StackOverflowIcon />
+            </div>
+          </Link>
+
         </div>
       </div>
 
