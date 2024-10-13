@@ -2,48 +2,52 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { skillsData, skillsImage } from '../../../public/data/skills'
+import { skillsCategories, skillsImage } from '../../../public/data/skills'
 
 const Skills = () => {
   return (
     <main className='flex-grow container mx-auto px-4 py-8 sm:py-12'>
-      <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-10 text-center md:text-left'>
+      <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-10 text-center'>
         Skills
       </h1>
-      <div className="w-full my-12 flex flex-wrap justify-center">
-        {skillsData.map((skill, id) => {
-          const imageSrc = skillsImage(skill);
-          return (
-            <div 
-              className="w-24 sm:w-32 md:w-40 h-24 sm:h-32 md:h-40 flex items-center justify-center m-3 sm:m-5 rounded-lg group relative cursor-pointer"
-              key={id}
-            >
-              <div className="h-full w-full rounded-lg ">
-                <div className="flex -translate-y-[1px] justify-center">
-                  <div className="w-3/4">
-                    <div className="h-[1px] w-full bg-gradient-to-r from-transparent to-transparent" />
+      
+      {Object.entries(skillsCategories).map(([category, skills]) => (
+        <div key={category} className="mb-12 sm:mb-16">
+          <h2 className="text-xl sm:text-2xl font-semibold mb-3 text-center sm:text-left before:content-['▷'] before:text-blue-500 flex  before:mr-3 before:text-sm items-center before:text-accent before:block">
+            {category}
+          </h2>
+          <div className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6">
+            {skills.map((skill, id) => {
+              const imageSrc = skillsImage(skill);
+              return (
+                <div 
+                  className="w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 flex items-center justify-center rounded-lg group relative cursor-pointer  hover:shadow-lg transition-shadow duration-300"
+                  key={id}
+                >
+                  <div className="h-full w-full rounded-lg p-3 sm:p-4">
+                    {imageSrc ? (
+                      <div className="relative h-full w-full">
+                        <Image
+                          src={imageSrc}
+                          alt={skill}
+                          layout="fill"
+                          objectFit="contain"
+                          className="transition-transform duration-300 group-hover:scale-110"
+                        />
+                      </div>
+                    ) : (
+                      <div className="h-full w-full"></div>
+                    )}
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white text-xs sm:text-sm py-1 px-2 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {skill}
                   </div>
                 </div>
-                <div className="flex items-center justify-center h-full w-full p-4">
-                  {imageSrc ? (
-                    <div className="relative h-full w-full">
-                      <Image
-                        src={imageSrc}
-                        alt={skill}
-                        layout="fill"
-                        objectFit="contain"
-                        className="transition-transform duration-300 group-hover:scale-110"
-                      />
-                    </div>
-                  ) : (
-                    <div className="h-full w-full bg-gray-300 rounded-lg"></div>
-                  )}
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+              );
+            })}
+          </div>
+        </div>
+      ))}
     </main>    
   )
 }
