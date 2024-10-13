@@ -36,7 +36,7 @@ export function Nav() {
           <Navbar.Link href="/" active={isActive('/')}>
             <span className={`font-semibold text-xl ${isActive('/') ? 'font-bold' : ''}`}>Home</span>
           </Navbar.Link>
-          <Navbar.Link as={Link} href="/about" active={isActive('/about')}>
+          <Navbar.Link  href="/about" active={isActive('/about')}>
             <span className={`font-semibold text-xl ${isActive('/about') ? 'font-bold' : ''}`}>About</span>
           </Navbar.Link>
           <Navbar.Link href="/projects" active={isActive('/projects')}>
