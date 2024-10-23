@@ -32,6 +32,7 @@ function AboutComponent() {
             />
           </div>
         </div>
+    
       </main>
   )
 }
