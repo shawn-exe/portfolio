@@ -10,7 +10,7 @@ const Experience = () => {
         Work Experience
       </h1>
       <div className='flex flex-col lg:flex-row items-center justify-start'>
-        <div className='w-full lg:w-1/2 mt-8 lg:mt-0 lg:sticky lg:top-8'>
+        <div className='w-full lg:w-2/5 mt-8 lg:mt-0 lg:sticky lg:top-8'>
           <Lottie
             animationData={animationData}
             loop={true}
@@ -19,7 +19,7 @@ const Experience = () => {
           />
         </div>
         
-        <div className="w-full lg:w-1/2 relative mx-4 sm:mx-6 md:mx-8 lg:mx-0 pb-12 flex flex-col before:absolute before:left-4 sm:before:left-6 md:before:left-8 before:top-2 before:bottom-0 before:border-l-2 before:border-gray-200 before:content-['']">
+        <div className="w-full lg:w-3/5 relative mx-4 sm:mx-6 md:mx-8 lg:mx-0 pb-12 flex flex-col before:absolute before:left-4 sm:before:left-6 md:before:left-8 before:top-2 before:bottom-0 before:border-l-2 before:border-gray-200 before:content-['']">
           {experience.map((exp, index) => (
             <div key={index} className="flex flex-col md:flex-row md:gap-10 mb-8 pl-8 sm:pl-10 md:pl-12">
               <div className="relative md:w-2/5 pl-2">
