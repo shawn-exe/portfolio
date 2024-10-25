@@ -1,174 +1,79 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import clsx, { ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+"use client";
 
-interface Props {
-  align?: 'left' | 'right';
-  project: {
-    id: number;
-    name: string;
-    description: string;
-    tasks: string;
-    url: string;
-    img: string;
-    tags: string[];
-    repo?: string;
-  };
+import Image from "next/image";
+import React from "react";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import Link from "next/link";
+
+interface ProjectProps {
+  name: string;
+  description: string;
+  tasks: string;
+  url: string;
+  img: string;
+  tags: string[];
 }
 
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
-
-const Project = ({ align = 'left', project, ...rest }: Props) => {
-  const { name, description, tasks, url, img, tags } = project;
-
+export function Project({ project }: { project: ProjectProps }) {
   return (
-    <>
-      <div
-        className={cn(
-          'relative hidden lg:block min-h-[280px] sm:min-h-[360px] h-full overflow-hidden lg:overflow-visible rounded-lg lg:rounded-xl shadow-lg lg:shadow-none text-center lg:text-right',
-          align === 'left' && 'lg:text-left'
-        )}
-        {...rest}
-      >
-       <div
-        className={cn(
-            'w-full lg:max-w-[60%] relative h-auto aspect-video rounded overflow-hidden shadow-2xl group',
-            align === 'left' && 'ml-auto'
-        )}
+    <CardContainer className="inter-var">
+      <CardBody className="bg-gray-300 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+        <CardItem
+          translateZ="50"
+          className="text-xl font-bold text-neutral-600 dark:text-white"
         >
-        <Image
-            src={img}
-            alt="project_image"
-            width={720}
-            height={480}
-            className="object-contain w-full transition-transform duration-200 group-hover:scale-105"
-        />
-        <Link
-            href={url}
-            target="_blank"
-            className="absolute inset-0 z-10 block bg-transparent"
-        />
-        </div>
-
-
-        <div
-          className={cn(
-            'lg:max-w-[45%] space-y-2 lg:space-y-5 w-full h-full p-5 lg:p-0',
-            'absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-0',
-            'lg:h-auto left-0 lg:left-auto top-0 right-auto lg:bg-none lg:text-inherit',
-            'flex flex-col justify-end',
-            'bg-gradient-to-t from-black/80 group-hover:from-accent group-focus:from-accent',
-            align === 'left' && 'lg:left-0'
-          )}
+          {project.name}
+        </CardItem>
+        <CardItem
+          as="p"
+          translateZ="60"
+          className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
         >
-          <div>
-            <div className="font-mono hidden lg:block text-accent capitalize text-xs lg:mb-2.5">
-              featured project
-            </div>
-            <h2 className="heading-tertiary !text-white lg:!text-dark-2 !font-semibold lg:!font-normal !normal-case">
-              <a
-                href={url}
-                className="block duration-200 hover:text-accent"
-                target="_blank"
-              >
-                {name}
-              </a>
-            </h2>
-          </div>
-
-          <div className="rounded-sm bg-gray-800 lg:bg-bg-secondary lg:shadow-lg lg:p-5">
-            <div
-              className={cn(
-                'lg:max-w-sm text-dark-1 lg:text-inherit text-sm lg:text-base',
-                align === 'right' && 'ml-auto'
-              )}
-            >
-              <p className="text-dark-1">{description}</p>
-              
-              <div className="hidden text-base lg:block lg:text-sm">
-                {tasks}
-              </div>
-            </div>
-          </div>
-
-          <p
-            className={cn(
-              'font-mono text-[10px] text-accent lg:text-accent lg:text-xs justify-center capitalize flex flex-wrap gap-2 lg:gap-x-5 items-center lg:justify-end',
-              align === 'left' && 'lg:justify-start'
-            )}
-          >
-            {tags.map((tag) => (
-              <span key={tag.replaceAll(' ', '')}>{tag}</span>
-            ))}
-          </p>
-
-          
-        </div>
-      </div>
-
-      {/* For mobile */}
-      <div
-        className={cn(
-          'relative lg:hidden min-h-[300px] h-full rounded-3xl shadow-lg lg:shadow-none text-center'
-        )}
-        {...rest}
-      >
-        <header className={cn('w-full')}>
+          {project.description}
+        </CardItem>
+        <CardItem translateZ="100" className="w-full mt-4">
           <Image
-            src={img}
-            alt={name}
-            width={720}
-            height={400}
-            className="object-cover w-full h-full transition-transform duration-200 group-hover:scale-105"
+            src={project.img}
+            height="1000"
+            width="1000"
+            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+            alt={project.name}
           />
-          <Link
-            href={url}
-            target="_blank"
-            className="absolute inset-0 z-10 block bg-transparent"
-          />
-        </header>
-
-        <div className={cn('bg-gray-800 p-5 space-y-2')}>
-          <div>
-            <h2 className="heading-tertiary !text-white !font-semibold !normal-case">
-              <a
-                href={url}
-                className="block duration-200 hover:text-accent"
-                target="_blank"
-              >
-                {name}
-              </a>
-            </h2>
-          </div>
-
-          <div className={cn('text-dark-1 space-y-2 text-sm')}>
-            <p className="text-base text-dark-1">{description}</p>
+        </CardItem>
         
-            <div className="mb-2 space-y-1">
-              {tasks?.split(',').map((task) => (
-                <div key={task.slice(0, 10)}>{task}</div>
-              ))}
-            </div>
-          </div>
+        <CardItem
+          translateZ="40"
+          className="flex flex-wrap gap-2 mt-4"
+        >
+          {project.tags.map((tag, index) => (
+            <span
+              key={index}
+              className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-lg text-xs"
+            >
+              {tag}
+            </span>
+          ))}
+        </CardItem>
 
-          <p
-            className={cn(
-              'font-mono text-[10px] text-accent lg:text-accent lg:text-xs justify-center capitalize flex flex-wrap gap-2 lg:gap-x-5 items-center lg:justify-end',
-              align === 'left' && 'lg:justify-start'
-            )}
+        <div className="flex justify-between items-center mt-8">
+          <CardItem
+            translateZ={20}
+            as={Link}
+            href={project.url}
+            target="_blank"
+            className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
           >
-            {tags.map((tag) => (
-              <span key={tag.replaceAll(' ', '')}>{tag}</span>
-            ))}
-          </p>
-
+            View Project →
+          </CardItem>
+          <CardItem
+            translateZ={20}
+            as="button"
+            className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+          >
+            Details
+          </CardItem>
         </div>
-      </div>
-    </>
+      </CardBody>
+    </CardContainer>
   );
-};
-
-export default Project;
+}
