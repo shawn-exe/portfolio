@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
+import { GithubIcon } from "./Icons";
 
 interface ProjectProps {
   name: string;
@@ -36,7 +37,7 @@ export function Project({ project }: { project: ProjectProps }) {
             src={project.img}
             height="1000"
             width="1000"
-            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+            className="h-60 w-full object-fit rounded-xl group-hover/card:shadow-xl"
             alt={project.name}
           />
         </CardItem>
@@ -61,9 +62,9 @@ export function Project({ project }: { project: ProjectProps }) {
             as={Link}
             href={project.url}
             target="_blank"
-            className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+            className="px-4 py-2 flex gap-2 items-center rounded-xl text-xs font-semibold dark:text-white"
           >
-            View Project →
+            View Project <GithubIcon/>
           </CardItem>
           <CardItem
             translateZ={20}
