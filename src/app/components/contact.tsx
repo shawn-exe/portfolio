@@ -1,10 +1,45 @@
 'use client'
-import React from 'react';
+import React, { useState } from 'react';
 import { ContactDotsSVG, ContactShapeSVG, ContactTopRightSVG } from '../../../public/project_images/ContactSVGs';
 import Lottie from 'lottie-react';
 import animationData from '../../../public/animations/contactanimation.json'
 
 const ContactPage: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [status, setStatus] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '',subject:'', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+
+
+
+
   return (
     <section className="relative z-10 overflow-hidden text-white py-20 px-10 lg:py-[120px]">
       <div className="container mx-auto">
@@ -34,30 +69,44 @@ const ContactPage: React.FC = () => {
 
           <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
             <div className="relative rounded-lg text-black bg-white p-8 shadow-lg sm:p-12 ">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="mb-6">
                   <input
                     type="text"
+                    id="name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    required
                     placeholder="Your Name"
                     className="w-full rounded border border-stroke px-[14px] py-3 text-base text-body-color outline-none focus:border-primary"
                   />
                 </div>
                 <div className="mb-6">
                   <input
-                    type="email"
-                    placeholder="Your Email"
+                     type="email"
+                     id="email"
+                     value={formData.email}
+                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                     required
+                     placeholder="Your Email"
                     className="w-full rounded border border-stroke px-[14px] py-3 text-base text-body-color outline-none focus:border-primary   "
                   />
                 </div>
                 <div className="mb-6">
                   <input
-                    type="text"
-                    placeholder="Subject"
+                     type="text"
+                     id="subject"
+                     value={formData.subject}
+                     placeholder="Subject"
+                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     className="w-full rounded border border-stroke px-[14px] py-3 text-base text-body-color outline-none focus:border-primary   "
                   />
                 </div>
                 <div className="mb-6">
                   <textarea
+                   id="message"
+                   value={formData.message}
+                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={6}
                     placeholder="Your Message"
                     className="w-full resize-none rounded border border-stroke px-[14px] py-3 text-base text-body-color outline-none focus:border-primary   "
@@ -66,6 +115,7 @@ const ContactPage: React.FC = () => {
                 <div>
                   <button
                     type="submit"
+                    disabled={status === 'sending'}
                     className="w-full rounded border border-primary bg-primary p-3 text-white transition hover:bg-opacity-90"
                   >
                     Send Message
