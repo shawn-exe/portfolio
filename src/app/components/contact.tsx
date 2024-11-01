@@ -1,10 +1,13 @@
 'use client'
+
 import React, { useState } from 'react';
 import { ContactDotsSVG, ContactShapeSVG, ContactTopRightSVG } from '../../../public/project_images/ContactSVGs';
 import Lottie from 'lottie-react';
 import animationData from '../../../public/animations/contactanimation.json'
+import { useToast } from "../../hooks/use-toast"
 
 const ContactPage: React.FC = () => {
+  const { toast } = useToast()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,7 +18,11 @@ const ContactPage: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('sending');
+    setStatus('sending');    
+    toast({
+      title: "Sending message...",
+      description: "Please wait while we process your request.",
+    });
 
     try {
       const response = await fetch('/api/send', {
@@ -28,20 +35,31 @@ const ContactPage: React.FC = () => {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '',subject:'', message: '' });
+        setFormData({ name: '', email: '', subject: '', message: '' });        
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+          variant: "success",
+        });
       } else {
-        setStatus('error');
+        setStatus('error');        
+        toast({
+          title: "Error sending message",
+          description: "Please try again later.",
+          variant: "destructive",
+        });
       }
     } catch (error) {
-      setStatus('error');
+      setStatus('error');      
+      toast({
+        title: "Error sending message",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
     }
   };
-
-
-
-
   return (
-    <section className="relative z-10 overflow-hidden text-white py-20 px-10 lg:py-[120px]">
+    <section className="relative z-10 overflow-hidden text-white  py-10 sm:py-12 md:py-20 mb-5 sm:mb-5 md:mb-0 lg:mb-0  px-10 lg:py-[120px]">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap lg:justify-between">
           <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
@@ -66,8 +84,7 @@ const ContactPage: React.FC = () => {
               </div>
             </div>
           </div>
-
-          <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
+          <div className="w-full px-1 sm:px-1 md:px-4 lg:px-4 lg:w-1/2 xl:w-5/12">
             <div className="relative rounded-lg text-black bg-white p-8 shadow-lg sm:p-12 ">
               <form onSubmit={handleSubmit}>
                 <div className="mb-6">
@@ -122,7 +139,6 @@ const ContactPage: React.FC = () => {
                   </button>
                 </div>
               </form>
-
               <div>
                 <span className="absolute -right-9 -top-10 z-[-1]">
                   <ContactShapeSVG />

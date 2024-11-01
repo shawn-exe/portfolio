@@ -4,8 +4,8 @@ import animationData from '../../../public/animations/devanimation.json'
 
 function AboutComponent() {
   return (
-    <main className='flex-grow container mx-auto px-4 py-8 sm:py-12'>
-        <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-10 text-center md:text-left'>
+    <main className='flex-grow container mx-auto px-4 py-8 sm:py-12 mt-0 sm:mt-0 md:mt-2 lg:mt-4 '>
+        <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-6 md:mb-4 lg:mb-2 text-center md:text-left'>
           About Me
         </h1>
         <div className='flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12'>
@@ -23,7 +23,7 @@ function AboutComponent() {
               I&apos;m enthusiastic about innovation and its potential to tackle complex challenges.
             </p>
           </div>
-          <div className='w-full md:w-2/5 mt-8 md:mt-0'>
+          <div className='w-full md:w-2/5  md:mt-0'>
             <Lottie
               animationData={animationData}
               loop={true}
@@ -32,7 +32,6 @@ function AboutComponent() {
             />
           </div>
         </div>
-    
       </main>
   )
 }

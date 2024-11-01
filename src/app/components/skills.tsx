@@ -6,8 +6,8 @@ import { skillsCategories, skillsImage } from '../../../public/data/skills'
 
 const Skills = () => {
   return (
-    <main className='flex-grow container mx-auto px-4 py-8 sm:py-12'>
-      <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-10 text-center'>
+    <main className='flex-grow container mx-auto px-4 py-14  sm:py-12 md:py-8 lg:py-8'>
+      <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-8 md:mb-10 lg:mb-12 text-center'>
         Skills
       </h1>
       

@@ -8,7 +8,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const page = () => {
   return (
-    <div className='bg-[#121212] min-h-screen'>
+    <div className='bg-gray-900 min-h-screen'>
       <Nav/>
       <div className='text-3xl sm:text-4xl md:text-5xl font-bold pt-10 text-white text-center md:text-center'>
           My Projects

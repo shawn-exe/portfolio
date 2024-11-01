@@ -3,13 +3,13 @@
 import React from 'react'
 import Image from 'next/image'
 import {Meteors} from '@/components/ui/meteors'
-import {DiscordIcon, MailIcon, InstagramIcon, LeetCodeIcon, StackOverflowIcon,XIcon, LinkedInIcon,GithubIcon } from './Icons';
+import { AnimatedTooltipPreview } from './avatargroup';
 import Link from 'next/link';
 
 const Intro = () => {
   return (
     <div className='w-full py-5 px-4 sm:px-6 lg:px-8 overflow-hidden'>
-      <div className='w-full text-center text-white mb-8'>
+      <div className='w-full text-center text-white mt-4 mb-6'>
         <h1 className='text-2xl sm:text-3xl md:text-4xl font-bold'>LET ME INTRODUCE MYSELF</h1>
       </div>
 
@@ -29,7 +29,7 @@ const Intro = () => {
           </div>
         </div>
 
-        <div className='text-white w-full md:w-3/5 lg:w-2/3'>
+        <div className='text-white w-full md:w-3/5 lg:w-2/3 px-3 sm:px-3 md:px-0 lg:px xl:px-0'>
           <ul className="space-y-4">
             <li className="flex items-start">
               <span className="mr-2 flex-shrink-0">🎓</span>
@@ -54,66 +54,14 @@ const Intro = () => {
         </div>
       </div>
 
-      <div className='flex flex-col justify-center items-center my-5'>
-      <p className='text-md sm:text-md md:text-md font-bold text-white'>get in touch</p>
-        <div className='flex items-center flex-row gap-8 mt-4 flex-wrap'>   
-
-          <Link href="https://x.com/?lang=en-in" target="_blank" rel="noopener noreferrer" className="block">
-            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
-              <XIcon />
-            </div>
-          </Link>
-
-
-          <Link href="https://github.com/shawn-exe" target="_blank" rel="noopener noreferrer" className="block">
-            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
-              <GithubIcon />
-            </div>
-          </Link>
-
-
-          <Link href="https://www.linkedin.com/in/shawnxsalis/" target="_blank" rel="noopener noreferrer" className="block">
-            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
-              <LinkedInIcon />
-            </div>
-          </Link>
-
-          <Link href="https://x.com/?lang=en-in" target="_blank" rel="noopener noreferrer" className="block">
-            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
-              <DiscordIcon />
-            </div>
-          </Link>
-
-          <Link  href="mailto:shawnxsalis@gmail.com"  target="_blank" rel="noopener noreferrer" className="block">
-            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
-              <MailIcon />
-            </div>
-          </Link>
-
-          <Link href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="block">
-            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
-              <InstagramIcon />
-            </div>
-          </Link>
-
-          <Link href="https://leetcode.com/u/shawnxsalis/" target="_blank" rel="noopener noreferrer" className="block">
-            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
-              <LeetCodeIcon />
-            </div>
-          </Link>
-
-          <Link href="https://x.com/?lang=en-in" target="_blank" rel="noopener noreferrer" className="block">
-            <div className="transition-transform duration-100 hover:scale-125 hover:z-10">
-              <StackOverflowIcon />
-            </div>
-          </Link>
-
-        </div>
+      <div className='flex flex-col justify-center items-center my-16 sm:my-16 md:my-12 lg:my-10'>
+      <p className='text-md sm:text-md md:text-md font-bold mb-2 text-white'>Get in touch</p>
+        <AnimatedTooltipPreview/>
       </div>
 
 
-      <div className='flex justify-center text-center text-gray-300 mt-10'>
-        Feel free to steal this theme! It&apos;s open source 🥰
+      <div className='flex justify-center item text-center gap-1 text-[0.85rem] text-white mt-10'>
+        Feel free to steal this theme! It&apos;s <span className='text-blue-500'> <Link href="https://github.com/shawn-exe/portfolio">open source 🥰</Link></span>
       </div>
 
     </div>

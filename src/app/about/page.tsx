@@ -7,7 +7,7 @@ import Experience from '../components/exp'
 import Footer from '../components/footer'
 function About() {
   return (
-    <div className='min-h-screen flex flex-col bg-[#121212] text-white'>
+    <div className='min-h-screen flex flex-col bg-gray-900 text-white'>
       <Nav />
       <AboutComponent/>
       <Skills/>

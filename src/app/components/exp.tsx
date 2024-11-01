@@ -5,12 +5,12 @@ import { experience } from '../../../public/data/exp'
 
 const Experience = () => {
   return (
-    <main className='flex-grow container mx-auto px-4 py-8 sm:py-12'>
-      <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-10 text-center'>
+    <main className='mb-4 flex-grow container mx-auto px-4 py-4 sm:py-4 md:py-12 lg:py-12'>
+      <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold mb-0 sm:mb-0 md:mb:10 lg:mb-10 text-center'>
         Work Experience
       </h1>
       <div className='flex flex-col lg:flex-row items-center justify-start'>
-        <div className='w-full lg:w-2/5 mt-8 lg:mt-0 lg:sticky lg:top-8'>
+        <div className='w-full lg:w-2/5 mt-2 sm:mt-2 md:mt-4 lg:mt-0 lg:sticky lg:top-8'>
           <Lottie
             animationData={animationData}
             loop={true}
@@ -30,7 +30,7 @@ const Experience = () => {
                 <h4 className="mt-2 font-semibold text-xl text-gray-400">{exp.company}</h4>
                 <time className="mt-2 text-sm text-gray-400/80">{exp.duration}</time>
               </div>
-              <div className="md:w-3/5 flex flex-col gap-2 text-justify text-gray-400 mt-4 md:mt-0">
+              <div className="md:w-3/5 flex flex-col gap-2 pl-2 sm:pl-2 md:pl-1 lg:pl-0 text-justify text-gray-400 mt-4 md:mt-0">
                 {exp.description}
               </div>
             </div>

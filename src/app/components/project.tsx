@@ -37,7 +37,7 @@ export function Project({ project }: { project: ProjectProps }) {
             src={project.img}
             height="1000"
             width="1000"
-            className="h-60 w-full object-fit rounded-xl group-hover/card:shadow-xl"
+            className="h-full w-full object-fit rounded-xl group-hover/card:shadow-xl"
             alt={project.name}
           />
         </CardItem>
