@@ -15,37 +15,37 @@ import {
       id: 1,
       name: "Twitter",
       icon: XIcon,
-      socialLink: "https://twitter.com/yourusername"
+      socialLink: "https://x.com/elonmusk"
     },
     {
       id: 2,
       name: "LinkedIn",
       icon: LinkedInIcon,
-      socialLink: "https://linkedin.com/in/yourusername"
+      socialLink: "https://linkedin.com/in/shawnxsalis"
     },
     {
       id: 3,
       name: "GitHub",
       icon: GithubIcon,
-      socialLink: "https://github.com/yourusername"
+      socialLink: "https://github.com/shawn-exe"
     },
     {
       id: 4,
       name: "Instagram",
       icon: InstagramIcon,
-      socialLink: "https://instagram.com/yourusername"
+      socialLink: "https://www.instagram.com/zuck/"
     },
     {
       id: 5,
       name: "LeetCode",
       icon: LeetCodeIcon,
-      socialLink: "https://leetcode.com/yourusername"
+      socialLink: "https://www.leetcode.com/shawnxsalis"
     },
     {
       id: 6,
       name: "Discord",
       icon: DiscordIcon,
-      socialLink: "https://discord.com/users/yourusername"
+      socialLink: "https://discord.com/users/950326374084792320"
     }
   ];  
 

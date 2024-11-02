@@ -18,17 +18,17 @@ interface ProjectProps {
 export function Project({ project }: { project: ProjectProps }) {
   return (
     <CardContainer className="inter-var">
-      <CardBody className="bg-gray-300 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+      <CardBody className="bg-gray-300 relative group/card  w-auto sm:w-[30rem] h-auto rounded-xl p-6 font-mono ">
         <CardItem
           translateZ="50"
-          className="text-xl font-bold text-neutral-600 dark:text-white"
+          className="text-xl text-neutral-900 dark:text-white"
         >
           {project.name}
         </CardItem>
         <CardItem
           as="p"
           translateZ="60"
-          className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+          className="text-neutral-900 text-sm max-w-sm mt-2 dark:text-neutral-300 font-popsans"
         >
           {project.description}
         </CardItem>
@@ -68,7 +68,8 @@ export function Project({ project }: { project: ProjectProps }) {
           </CardItem>
           <CardItem
             translateZ={20}
-            as="button"
+            as={Link}
+            href={project.url}
             className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
           >
             Details

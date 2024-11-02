@@ -19,12 +19,12 @@ export function Homecomponent() {
   };
 
   return (
-    <section className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8 py-12">
+    <section className="min-h-fit sm:min-h-fit md:min-h-screen lg:min-h-screen flex items-center px-4 sm:px-6 lg:px-8 py-12">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7 flex flex-col items-center lg:items-start space-y-16">
-            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-center lg:text-left leading-tight">
-              <span className="text-white bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+          <div className="lg:col-span-7 flex flex-col items-center lg:items-start space-y-4 sm:space-y-8 md:space-y-14 lg:space-y-16">
+            <h1 className="text-white  text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-center lg:text-left leading-tight">
+              <span className="text-white">
                 Hello, I&apos;m{" "}
               </span>
               <br className="hidden sm:block" />
@@ -46,7 +46,7 @@ export function Homecomponent() {
               />
             </h1>
 
-            <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl max-w-2xl text-center lg:text-left">
+            <p className="text-[#ADB7BE] font-mono text-base sm:text-lg lg:text-xl max-w-2xl text-center lg:text-left">
               I&apos;m a Computer Science and Engineering student with a passion for development. 
               I look forward to contributing to impactful projects and building innovative solutions!
             </p>

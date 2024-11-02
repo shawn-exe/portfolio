@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import { Navbar, CustomFlowbiteTheme } from "flowbite-react";
 import { FileUser, Home, Layers3, Send, User } from "lucide-react";
@@ -27,13 +26,13 @@ export function Nav() {
   };
 
   return (
-    <div className="px-5 pt-5">
+    <div className="px-5 pt-5  ">
       <Navbar fluid rounded className="rounded-lg bg-transparent" theme={customTheme}>
-        <Navbar.Brand as={Link} href="https://flowbite-react.com">
-          <span className="self-center whitespace-nowrap text-3xl font-semibold text-blue-500 dark:text-black">PortFolio</span>
+        <Navbar.Brand href="/">
+          <span className="self-center whitespace-nowrap text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-raleway text-blue-500 dark:text-black">Shawn Salis</span>
         </Navbar.Brand>
         <Navbar.Toggle />
-        <Navbar.Collapse>
+        <Navbar.Collapse className='font-mono'>
           <Navbar.Link href="/" active={isActive('/')}>
             <span className='text-xl flex gap-1 px-1'><Home/>Home</span>
           </Navbar.Link>

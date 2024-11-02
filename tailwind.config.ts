@@ -11,6 +11,19 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			sans: ['Inter', 'sans-serif'], 
+			mono: ['Fira Code', 'monospace'],
+			playfair: ['Playfair Display', 'serif'],
+			ralesans: ['Source Sans Pro', 'sans-serif'],
+            raleway: ['Raleway', 'sans-serif'],
+			robsans: ['Roboto', 'sans-serif'],
+            'roboto-slab': ['Roboto Slab', 'serif'],
+			popsans: ['Inter', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+			montsans: ['Open Sans', 'sans-serif'],
+            montserrat: ['Montserrat', 'sans-serif'],
+		  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

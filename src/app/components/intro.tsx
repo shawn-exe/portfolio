@@ -10,7 +10,7 @@ const Intro = () => {
   return (
     <div className='w-full py-5 px-4 sm:px-6 lg:px-8 overflow-hidden'>
       <div className='w-full text-center text-white mt-4 mb-6'>
-        <h1 className='text-2xl sm:text-3xl md:text-4xl font-bold'>LET ME INTRODUCE MYSELF</h1>
+        <h1 className='text-2xl sm:text-3xl md:text-4xl font-bold font-montserrat'>LET ME INTRODUCE MYSELF</h1>
       </div>
 
       <div className='w-full flex flex-col md:flex-row items-center gap-8 md:gap-12'>
@@ -29,11 +29,11 @@ const Intro = () => {
           </div>
         </div>
 
-        <div className='text-white w-full md:w-3/5 lg:w-2/3 px-3 sm:px-3 md:px-0 lg:px xl:px-0'>
+        <div className='text-white w-full md:w-3/5 lg:w-2/3 px-3 sm:px-3 md:px-0 lg:px xl:px-0 font-robsans'>
           <ul className="space-y-4">
             <li className="flex items-start">
               <span className="mr-2 flex-shrink-0">🎓</span>
-              <span>I&apos;m <span className='font-bold text-lg'>Ashlin Shawn Salis</span>, a passionate computer science undergrad at NMAMIT, Nitte, always ready to tackle exciting challenges in tech.</span>
+              <span>I&apos;m <span className='font-bold text-lg text-blue-500'>Ashlin Shawn Salis</span>, a passionate computer science undergrad at NMAMIT, Nitte, always ready to tackle exciting challenges in tech.</span>
             </li>
 
             <li className="flex items-start">
@@ -54,7 +54,7 @@ const Intro = () => {
         </div>
       </div>
 
-      <div className='flex flex-col justify-center items-center my-16 sm:my-16 md:my-12 lg:my-10'>
+      <div className='flex flex-col justify-center items-center my-16 sm:my-16 md:my-12 lg:my-10 font-mono'>
       <p className='text-md sm:text-md md:text-md font-bold mb-2 text-white'>Get in touch</p>
         <AnimatedTooltipPreview/>
       </div>

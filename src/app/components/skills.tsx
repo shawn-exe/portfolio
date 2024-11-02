@@ -7,12 +7,12 @@ import { skillsCategories, skillsImage } from '../../../public/data/skills'
 const Skills = () => {
   return (
     <main className='flex-grow container mx-auto px-4 py-14  sm:py-12 md:py-8 lg:py-8'>
-      <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-8 md:mb-10 lg:mb-12 text-center'>
+      <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-8 md:mb-10 lg:mb-12 text-center font-raleway'>
         Skills
       </h1>
       
       {Object.entries(skillsCategories).map(([category, skills]) => (
-        <div key={category} className="mb-12 sm:mb-16">
+        <div key={category} className="mb-12 sm:mb-16 font-ralesans">
           <h2 className="text-xl sm:text-2xl font-semibold mb-3 text-center sm:text-left before:content-['▷'] before:text-blue-500 flex  before:mr-3 before:text-sm items-center before:text-accent before:block">
             {category}
           </h2>
